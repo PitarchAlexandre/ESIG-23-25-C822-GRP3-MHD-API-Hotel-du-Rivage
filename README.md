@@ -110,17 +110,11 @@ Tout le contenu associé au projet est disponible dans le dossier **Doc** à la 
 
 ---
 
-## Licence
-
-Ce projet est fictif et réalisé uniquement dans le cadre d'un exercice académique.
-
----
-
 ## Instructions pour Faire Fonctionner l'Application
 
 1. **Téléchargement du Projet**
-   - Téléchargez le dossier **Application-Hotel**.
-   - Une fois téléchargé, décompressez le fichier si nécessaire.
+   - Téléchargez le dossier **Application-Hotel.7p**.
+   - Une fois téléchargé, décompressez le dossier.
    - Exécutez le fichier **AP_Groupe3_Hotel.exe** pour lancer l'application desktop.
 
 2. **Exécution de l'Application**
