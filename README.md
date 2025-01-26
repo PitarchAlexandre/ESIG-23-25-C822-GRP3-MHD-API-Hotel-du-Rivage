@@ -105,8 +105,8 @@ Tout le contenu associé au projet est disponible dans le dossier **Doc** à la 
 
 ## Auteurs
 
-- **Maëlle**
-- **Alexandre**
+- **Maëlle Huguenin-Dezot**
+- **Alexandre Pitarch**
 
 ---
 
