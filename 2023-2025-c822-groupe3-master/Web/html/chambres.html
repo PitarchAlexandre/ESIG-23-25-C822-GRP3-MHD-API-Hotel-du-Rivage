@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des chambres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/x-icon" href="../logo/Logo_Vectoriel_sans_texte.png">
+</head>
+<body>
+<header>
+    <!--BARRE DE NAVIGATION-->
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
+            <!--LOGO BARRE DE NAV-->
+            <a href="../index.html" class="nav-brand ms-3 ms-sm-5 pb-1">
+                <img src="../logo/Logo_Vectoriel_sans_texte.png "/>
+            </a>
+            <!--TOGGLE RESPONSIVE (s'active uniquement sur les petits écrans-->
+            <button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- L'id navbarSupportedContent
+             permet ouvrir et fermer le toggle-->
+                <!--LIEN DE NAVIGATION-->
+                <ul class="navbar-nav ms-sm-auto me-5 mt-2 mt-sm-0 mb-2 mb-lg-0 fs-4">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="formulaire.html">Contact</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active disabled" href="chambres.html">Les chambres</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="aPropos.html">À propos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <!--TITRE FORMULAIRE-->
+        <h1 class="display-2 text-center mt-3 mb-2 mb-sm-5">Liste des chambres</h1>
+        <!--FORMULAIRE-->
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Chambre</th>
+                <th scope="col">Capacité</th>
+                <th scope="col">Prix</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Chambre standard simple</td>
+                <td>1 personne</td>
+                <td>120.-</td>
+            </tr>
+            <tr>
+                <td>Chambre simple de luxe</td>
+                <td>1 personne</td>
+                <td>150.-</td>
+            </tr>
+            <tr>
+                <td>Chambre double</td>
+                <td>2 personnes</td>
+                <td>160.-</td>
+            </tr>
+            <tr>
+                <td>Chambre twin</td>
+                <td>2 personnes</td>
+                <td>150.-</td>
+            </tr>
+            <tr>
+                <td>Chambre double de luxe</td>
+                <td>2 personnes</td>
+                <td>180.-</td>
+            </tr>
+            <tr>
+                <td>Chambre triple</td>
+                <td>3 personnes</td>
+                <td>200.-</td>
+            </tr>
+            <tr>
+                <td>Chambre triple de luxe</td>
+                <td>3 personnes</td>
+                <td>230.-</td>
+            </tr>
+            <tr>
+                <td>Chambre familiale</td>
+                <td>4 personnes</td>
+                <td>250.-</td>
+            </tr>
+            <tr>
+                <td>Grande chambre familiale</td>
+                <td>5 personnes</td>
+                <td>310.-</td>
+            </tr>
+            <tr>
+                <td>Petite suite</td>
+                <td>6 personnes</td>
+                <td>360.-</td>
+            </tr>
+            <tr>
+                <td>Suite</td>
+                <td>7 personnes</td>
+                <td>410.-</td>
+            </tr>
+            <tr>
+                <td>Suite de luxe</td>
+                <td>8 personnes</td>
+                <td>460.-</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+</main>
+<footer>
+    <div class="container">
+        <img src="../logo/Logo_Vectoriel.png" class="mx-auto d-flex" />
+    </div>
+    <div>
+        <p class="text-center">
+            Adresse<br>
+            NPA Localité<br>
+            <a class="text-black" href="tel:+41324664660">032 466 46 60</a><br>
+            &copy;2024
+        </p>
+    </div>
+</footer>
+<!--BOOTSTRAP JAVASCRIPT-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+<!--JAVASCRIPT FORMULAIRE-->
+<script src="../js/main.js"></script>
+</body>
+</html>

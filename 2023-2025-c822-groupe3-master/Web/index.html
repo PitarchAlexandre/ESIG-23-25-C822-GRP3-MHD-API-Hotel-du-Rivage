@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hôtel du rivage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <!--BOOTSTRAP CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="logo/Logo_Vectoriel_sans_texte.png">
+</head>
+<body>
+<header>
+    <!--BARRE DE NAVIGATION-->
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center ">
+            <!--LOGO BARRE DE NAV-->
+            <a href="index.html" class="nav-brand ms-3 ms-sm-5 pb-1">
+                <img src="logo/Logo_Vectoriel_sans_texte.png "/>
+            </a>
+            <!--TOGGLE RESPONSIVE (s'active uniquement sur les petits écrans-->
+            <button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu"> <!-- L'id navbarSupportedContent
+             permet ouvrir et fermer le toggle-->
+                <!--LIEN DE NAVIGATION-->
+                <ul class="navbar-nav ms-sm-auto me-5 mt-2 mt-sm-0 mb-2 mb-lg-0 fs-4">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active disabled" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="html/formulaire.html">Contact</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="html/chambres.html">Les chambres</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="html/aPropos.html">À propos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--MAIN-->
+    <main>
+        <div class="container">
+            <h1 class="display-1 text-center mt-1 mb-sm-3">Hôtel du Rivage</h1>
+
+            <!--CAROUSSEL DES IMAGES A L'ACCEUIL-->
+            <div class="rounded py-3 px-3 ">
+                <div id="boutonsCarrousel" class="carousel slide "  data-bs-ride="carousel" >
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#boutonsCarrousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    </div>
+
+                    <div class="carousel-inner rounded-4">
+                        <div class="carousel-item active">
+                            <img src="img/hotel.jpg" class="d-block w-100 " alt="Entrée Hotel beau Rivage">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/vu5.jpg" class="d-block w-100" alt="hotel au bord du lac">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/chambre.jpg" class="d-block w-100" alt="Chambre d'hotel">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="img/aperitif.jpg" class="d-block w-100" alt="Aperitif">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/sas-entree.jpg" class="d-block w-100" alt="Entrée Hotel">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/vue.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/vue4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/brunch2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev " type="button" data-bs-target="#boutonsCarrousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#boutonsCarrousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <h2 class="display-3 lead text-center my-1 mb-sm-4">Bienvenue</h2>
+            <div class="container mx-3 col-11 justify-content-start">
+                <p>Bienvenue à l'Hotel du Rivage, niché au cœur des montagnes, au bord d'un lac majestueux.</p>
+                <p>Imaginez-vous réveiller dans une chambre confortable, avec une vue imprenable sur la nature. Nos
+                    chambres, pouvant accueillir de 1 à 8 personnes, sont équipées de douches et toilettes privatives pour
+                    votre confort.</p>
+                <p>Savourez un délicieux repas dans notre restaurant, ou détendez-vous sur notre terrasse ensoleillée.
+                    À votre arrivée, notre équipe chaleureuse à la réception vous accueillera avec le sourire.</p>
+                <p>Découvrez les nombreuses activités offertes aux alentours. En hiver, partez en ski de randonnée en
+                    couple, et en été, profitez d'une promenade en famille autour du lac. Admirez les paysages depuis le
+                    téléphérique, et vivez des moments inoubliables avec vos amis sportifs, que ce soit pour le ski,
+                    le snowboard, l'escalade ou la randonnée.</p>
+                <p>L'Hotel du Rivage, c'est l'endroit idéal pour les familles, les couples et les groupes sportifs. Venez
+                    vivre une expérience unique, pleine de joie et de découvertes.</p>
+                <p>Réservez dès maintenant pour un week-end en montagne mémorable !</p>
+            </div>
+        </div>
+    </main>
+<footer>
+    <div class="container">
+        <img src="logo/Logo_Vectoriel.png" class="mx-auto d-flex" />
+    </div>
+    <div>
+        <p class="text-center">
+            Adresse<br>
+            NPA Localité<br>
+            <a class="text-black" href="tel:+41324664660">032 466 46 60</a><br>
+            &copy;2024
+        </p>
+    </div>
+</footer>
+<!--BOOTSTRAP JAVASCRIPT-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

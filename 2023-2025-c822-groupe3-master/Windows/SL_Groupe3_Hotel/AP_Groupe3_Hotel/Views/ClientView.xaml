@@ -1,0 +1,301 @@
+﻿<Window x:Class="AP_Groupe3_Hotel.Views.ClientView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:AP_Groupe3_Hotel.Utilities"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="ClientView" 
+        Height="600" Width="1200"
+        MinHeight="600" MinWidth="1200"
+        WindowStartupLocation="CenterScreen">
+    <!-- Codé par Alexandre -->
+    <!-- Importe le converteur qui permet de convertir les Déjeuner (qui sont booléens) en string. 0 = Non et 1 = Oui-->
+    <Window.Resources>
+        <local:StatutToStringConverter x:Key="ReservationConverter" />
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu Height="25"
+              DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier" Height="16">
+                <MenuItem Header="_Ajouter"
+                          ToolTip="Ajouter un client"
+                          Command="{Binding DisplayClientFormCommand, Mode=OneWay}" Cursor="Hand"/>
+                <MenuItem Header="_Modifier"
+                          ToolTip="Modifier un client"
+                          Command="{Binding EditClientCommand, Mode=OneWay}"/>
+                <MenuItem Header="_Ajouter localité"
+                            ToolTip="Ajouter une localité"
+                            Command="{Binding InsertLocaliteCommand, Mode=OneWay}"/>
+                <Separator></Separator>
+                <MenuItem Header="_Retour"
+                          ToolTip="Aller vers les réservations des chambres"
+                          Click="btnClientViewRetour_Click"/>
+                <Separator />
+
+                <MenuItem x:Name="mitQuitter"
+                          Header="_Quitter" Click="btnQuitter_Click"
+                          />
+            </MenuItem>
+            <MenuItem x:Name="btnQuestionMark" Header="_?" Height="24" Click="btnQuestionMark_Click"
+                      />
+        </Menu>
+        <!-- Barre de statut en bas -->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem HorizontalAlignment="Right" Margin="0,0,5,0">Hôtel du Rivage</StatusBarItem>
+        </StatusBar>
+
+        <!-- Panneau de boutons sur la gauche -->
+        <Grid DockPanel.Dock="Left" Width="250" Background="#5CD5FB">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="209*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- StackPanel pour la recherche -->
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3">
+                <TextBlock Text="Rechercher" FontSize="16" Margin="10,10,0,0"/>
+                <TextBox Margin="10,10,10,0" Background="White" Height="30"
+                         Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <!-- StackPanel pour les boutons -->
+            <Button     Grid.Row="1"
+                        Height="40"
+                        Width="200"
+                        Margin="6,15,25,0"
+                        Background="#777777"
+                        BorderBrush="#777777"
+                        materialDesign:ButtonAssist.CornerRadius="25"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Ajouter un client"
+                        Command="{Binding DisplayClientFormCommand, Mode=OneWay}" Cursor="Hand" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock Text="Ajouter" />
+            </Button>
+
+            <Button     Grid.Row="2"
+                        Height="40"
+                        Width="200"
+                        Margin="6,15,25,0"
+                        Background="#777777"
+                        BorderBrush="#777777"
+                        materialDesign:ButtonAssist.CornerRadius="25"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Modifier un client"
+                        Command="{Binding EditClientCommand, Mode=OneWay}" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock Text="Modifier" />
+            </Button>      
+            
+            <Button     Grid.Row="5"
+                        Height="40"
+                        Width="200"
+                        Margin="6,15,25,0"
+                        Background="#777777"
+                        BorderBrush="#777777"
+                        materialDesign:ButtonAssist.CornerRadius="25"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Modifier un client"
+                        Command="{Binding InsertLocaliteCommand, Mode=OneWay}" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock Text="Insérer une localité" />
+            </Button>
+
+            <Button     Grid.Row="3"
+                        Height="40"
+                        Width="200"
+                        Margin="6,15,25,0"
+                        Background="#777777"
+                        BorderBrush="#777777"
+                        materialDesign:ButtonAssist.CornerRadius="25"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Supprimer un client"
+                        Command="{Binding DeleteClientCommand, Mode=OneWay}" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock Text="Supprimer" />
+            </Button>
+
+            <Button x:Name="btnClientViewRetour" Grid.Row="7"
+                    Grid.Column="2"
+                    Height="40"
+                    Width="150"
+                    Margin="9,5,50,0"
+                    Background="#777777"
+                    BorderBrush="#777777"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="btnClientViewRetour_Click">
+                <TextBlock Text="Retour" />
+            </Button>
+        </Grid>
+
+        <!-- Grille principale pour la ListView -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="170"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!-- Titre et ListView -->
+            <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,0,0,210">
+                <TextBlock Text="Clients"
+                           Padding="5"
+                           VerticalAlignment="Center" 
+                           Background="#FFC3DCEA" 
+                           FontSize="16">
+                </TextBlock>
+                <!--Liste des clients liés à la base de données ainsi que les headers-->
+                <ListView ItemsSource="{Binding ClientsView}"
+          SelectedItem="{Binding ClientSelectionne}" 
+          d:ItemsSource="{d:SampleData ItemCount=6}" 
+          Height="248">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="100"
+                            DisplayMemberBinding="{Binding NomCli}">
+                                <GridViewColumnHeader Content="Nom"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="NomCli"/>
+                            </GridViewColumn>
+                            <GridViewColumn Width="110">
+                                <GridViewColumnHeader Content="Prénom"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="PreCli"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding PreCli}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="170">
+                                <GridViewColumnHeader Content="Adresse"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="RueCli"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding RueCli}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="90">
+                                <GridViewColumnHeader Content="NPA"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="FkCliLocNavigation.NpaLoc"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FkCliLocNavigation.NpaLoc}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="120">
+                                <GridViewColumnHeader Content="Localité"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="FkCliLocNavigation.NomLoc"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FkCliLocNavigation.NomLoc}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="130">
+                                <GridViewColumnHeader Content="Téléphone"
+                                      CommandParameter="TelCli"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding TelCli}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="190">
+                                <GridViewColumnHeader Content="Email"
+                                      Command="{Binding SortingListCommand}"
+                                      CommandParameter="MailCli"/>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MailCli}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+
+            <!--Sous-formulaire de Réservations-->
+            <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,38,0,0">
+                <TextBlock Text="Réservations"
+                           Padding="5"
+                           VerticalAlignment="Center" 
+                           Background="#FFD4D4D4" 
+                           FontSize="16">
+                </TextBlock>
+                <!--Liaison entre les clients et les réservations.-->
+                <ListView ItemsSource="{Binding ClientSelectionne.TbReservations }"
+                          SelectedItem="{Binding ReservationSelectionnee}" 
+                          d:ItemsSource="{d:SampleData ItemCount=4}" 
+                          Height="226">
+                    <ListView.View>
+                        <!--Liste des réservations liés à la base de données avec que les headers-->
+                        <GridView>
+                            <GridViewColumn Width="180"
+                                            DisplayMemberBinding="{Binding PkRes}">
+                                <GridViewColumnHeader  Content="Numéro réservation"/>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200">
+                                <GridViewColumnHeader>Chambre réservée</GridViewColumnHeader>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding TbChambre.PfkChaEtaNavigation.CodeEta}" />
+                                            <TextBlock Text=" - " />
+                                            <TextBlock Text="{Binding TbChambre.CodeCha}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="140" DisplayMemberBinding="{Binding DatArrRes}">
+                                <GridViewColumnHeader>Date d'arrivée</GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn Width="140" DisplayMemberBinding="{Binding DatDepRes}">
+                                <GridViewColumnHeader>Date de départ</GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn Width="120" DisplayMemberBinding="{Binding DejRes, Converter={StaticResource ReservationConverter}}">
+                                <GridViewColumnHeader HorizontalAlignment="Left">Déjeuner</GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200" DisplayMemberBinding="{Binding NbrPerRes}">
+                                <GridViewColumnHeader>Nombre de personnes</GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200" DisplayMemberBinding="{Binding DatJouRes}">
+                                <GridViewColumnHeader>Date et heure de la réservation</GridViewColumnHeader>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+
+        </Grid>
+    </DockPanel>
+</Window>

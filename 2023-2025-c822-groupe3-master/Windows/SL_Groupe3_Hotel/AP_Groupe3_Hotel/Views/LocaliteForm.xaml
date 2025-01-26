@@ -1,0 +1,124 @@
+﻿<Window x:Class="AP_Groupe3_Hotel.Views.LocaliteForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:viewModels="clr-namespace:AP_Groupe3_Hotel.ViewModels"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:local="clr-namespace:AP_Groupe3_Hotel.Views"
+        mc:Ignorable="d"
+        Title="LocaliteForm" 
+        Height="440" Width="500"
+        
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+       >
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0"
+                   Fill="#5CD5FB">
+        </Rectangle>
+
+        <TextBlock Grid.Row="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="Localité"
+                   FontSize="22"
+                   FontWeight="Bold"/>
+
+        <Rectangle Fill="#777777"
+                   Grid.Row="1"
+                   Grid.RowSpan="11"
+                   Margin="30"
+                   RadiusX="30"
+                   RadiusY="30">
+        </Rectangle>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+
+            <TextBlock VerticalAlignment="Center"
+                       Text="NPA :"
+                       Margin="80,80,0,10" 
+                       Foreground="White" 
+                       FontSize="16">
+            </TextBlock>
+            <TextBox
+                     Width="260"
+                     BorderBrush="White" Height="30"
+                        Margin="17,65,0,0"
+                     Text="{Binding Localite.NpaLoc}"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal">
+
+            <TextBlock VerticalAlignment="Center"
+                       Text="Localité :"
+                       Margin="80,0,0,0" 
+                       Foreground="White" 
+                       FontSize="16">
+            </TextBlock>
+
+            <TextBox Margin="20,30,0,46"
+                     Width="260"
+                     BorderBrush="White"
+                     Text="{Binding Localite.NomLoc}">
+            </TextBox>
+
+        </StackPanel>
+
+
+
+
+
+
+        <StackPanel  Grid.Row="10"
+                    Orientation="Horizontal">
+
+            <Button x:Name="btnLocaliteEnregistrer" Height="40"
+                    Width="160"
+                    Margin="60,0,0,30"
+                    Background="#5CD5FB"
+                    BorderBrush="#5CD5FB"
+                    Foreground="Black"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                    Command="{Binding InsertLocaliteCommand, Mode=OneWay}" Click="btnLocaliteEnregistrer_click"
+                    >
+                <TextBlock Text="Enregistrer" />
+            </Button>
+
+            <Button Height="40"
+                    x:Name="btnLocaliteRetour"
+                    Width="160"
+                    Margin="60,0,0,30"
+                    Background="#5CD5FB"
+                    BorderBrush="#5CD5FB"
+                    Foreground="Black"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="btnLocaliteRetour_Click" >
+                <TextBlock Text="Retour" />
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
+
