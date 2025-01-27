@@ -65,8 +65,9 @@ Ce projet a été réalisé dans le cadre de l'atelier **C822** à l'ESIG, du 13
 3. Ajout d'un **trigger** pour automatiser l'enregistrement des dates de réservation.
 
 ![MCD](Doc/img/MCD-Hotel.PNG)
-[Afficher le MLD](Doc/img/MLD-Hotel.PNG)
-[Afficher l'ERD](Doc/img/ERD-Hotel.PNG)
+
+- [Afficher le MLD](Doc/img/MLD-Hotel.PNG)
+- [Afficher l'ERD](Doc/img/ERD-Hotel.PNG)
 
 ---
 
